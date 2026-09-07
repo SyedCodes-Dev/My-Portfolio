@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Grotesk', Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01" 1, "cv11" 1;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-touch-callout: none;
+  }
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+.font-outline-fallback {
+  text-shadow:
+    1px 0 0 #000,
+    -1px 0 0 #000,
+    0 1px 0 #000,
+    0 -1px 0 #000,
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .font-outline-fallback {
+    -webkit-text-stroke: 2px black;
+    text-shadow: none;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+:where(.font-black, .font-extrabold, .font-bold, .font-semibold):not(.font-mono):not(code):not(pre) {
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.font-mono, code, pre, kbd, samp) {
+  font-family: var(--font-mono);
+}
+
+p,
+li {
+  text-wrap: pretty;
+  font-weight: 300;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+html,
+body {
+  font-family: var(--font-sans);
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+
+  overscroll-behavior: none;
+}
+
+
+::selection {
+  background-color: #a3e635;
+
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: #a3e635;
+
+  color: #000000;
+}
+
+
+html.lenis,
+html.lenis body {
+  font-family: var(--font-sans);
+  height: auto;
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+@keyframes blob-drift-1 {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(100px, -50px, 0) scale(1.2);
+  }
+}
+
+@keyframes blob-drift-2 {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-100px, 100px, 0) scale(1.5);
+  }
+}
+
+
+@keyframes hero-orb-1 {
+
+  0%,
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-45%, -55%, 0) scale(1.1);
+  }
+}
+
+@keyframes hero-orb-2 {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(10%, 5%, 0) scale(1.2);
+  }
+}
+
+@keyframes hero-orb-3 {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-10%, -5%, 0) scale(1.3);
+  }
+}
+
+
+@keyframes hero-grid-scroll {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+
+@keyframes hero-float {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0) scale(1.02);
+  }
+}
+
+
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
