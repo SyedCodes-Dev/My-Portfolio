@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from 'react';
 import { Gsap } from '../utils/gsapAnimate';
-import { Github, Linkedin, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Facebook, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { exponentialEaseOut } from '../utils/easing';
 
 const Footer = memo(function Footer() {
@@ -24,26 +24,26 @@ const Footer = memo(function Footer() {
 
 
   useEffect(() => {
-  const updateTime = () => {
-    if (!timeRef.current) return;
+    const updateTime = () => {
+      if (!timeRef.current) return;
 
-    const now = new Date();
+      const now = new Date();
 
-    timeRef.current.textContent = now.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-      timeZoneName: 'short',
-    });
-  };
+      timeRef.current.textContent = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZoneName: 'short',
+      });
+    };
 
-  updateTime();
+    updateTime();
 
-  const interval = setInterval(updateTime, 1000);
+    const interval = setInterval(updateTime, 1000);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
 
   return (
@@ -120,6 +120,7 @@ const Footer = memo(function Footer() {
                 { label: 'WhatsApp', href: 'https://wa.me/923371800185', icon: MessageCircle },
                 { label: 'GitHub', href: 'https://github.com/SyedCodes-Dev', icon: Github },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/syed-ahsan-595a51430/', icon: Linkedin },
+                { label: 'Facebook', href: 'https://www.facebook.com/syedahsankaleembukhari', icon: Facebook },
               ].map((link) => (
                 <a
                   key={link.label}
