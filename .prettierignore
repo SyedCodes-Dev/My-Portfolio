@@ -1,0 +1,16 @@
+# Build output
+build
+dist
+
+# Dependencies
+node_modules
+
+# Lockfiles & generated
+package-lock.json
+
+# Static assets
+public
+
+# Misc
+.vite
+*.min.js
