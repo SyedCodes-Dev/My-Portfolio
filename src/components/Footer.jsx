@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from 'react';
 import { Gsap } from '../utils/gsapAnimate';
-import { Github, Linkedin, Facebook, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Facebook, Instagram, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { exponentialEaseOut } from '../utils/easing';
 
 const Footer = memo(function Footer() {
@@ -121,6 +121,7 @@ const Footer = memo(function Footer() {
                 { label: 'GitHub', href: 'https://github.com/SyedCodes-Dev', icon: Github },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/syed-ahsan-595a51430/', icon: Linkedin },
                 { label: 'Facebook', href: 'https://www.facebook.com/syedahsankaleembukhari', icon: Facebook },
+                { label: 'Instagram', href: 'https://www.instagram.com/syedcodes_dev/', icon: Instagram },
               ].map((link) => (
                 <a
                   key={link.label}
