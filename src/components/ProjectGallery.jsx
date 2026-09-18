@@ -44,10 +44,9 @@ export default function ProjectGallery({ onOpenProject }) {
     const reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const updateMode = () => {
-      const isMobile = window.innerWidth < 1024;
-      setEnablePinnedScroll(!reducedMotionMedia.matches && !isMobile);
-    };
-
+  const isMobile = window.innerWidth < 1024;
+  setEnablePinnedScroll(!isMobile);
+};
     updateMode();
 
     if (reducedMotionMedia.addEventListener) reducedMotionMedia.addEventListener('change', updateMode);

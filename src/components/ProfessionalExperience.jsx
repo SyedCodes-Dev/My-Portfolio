@@ -7,7 +7,7 @@ const experiences = [
   {
     company: 'Independent',
     role: 'Frontend Developer',
-    period: '2025 - Present',
+    period: '2025',
     impact: 'Building responsive and interactive websites as independent portfolio projects.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
     description: [
@@ -18,7 +18,7 @@ const experiences = [
   {
     company: 'Independent',
     role: 'React Developer',
-    period: '2026 - Present',
+    period: '2026',
     impact: 'Building React applications with reusable components, state and modern tooling.',
     stack: ['React', 'Vite', 'JavaScript', 'CSS'],
     description: [
@@ -29,7 +29,7 @@ const experiences = [
   {
     company: 'Personal Learning',
     role: 'UI/UX & Motion',
-    period: '2025 - Present',
+    period: '2025',
     impact: 'Developing stronger visual design, animation and interaction skills through hands-on projects.',
     stack: ['UI/UX', 'GSAP', 'Animations', 'Figma'],
     description: [
@@ -143,8 +143,8 @@ const ProfessionalExperience = () => {
 
   const statCards = useMemo(() => {
     const roles = experiences.length;
-    const activeNow = experiences.filter((item) => /present/i.test(item.period)).length;
-    const organizations = new Set(experiences.map((item) => item.company)).size;
+    const activeNow = 3;
+    const organizations = 0;
     const startYears = experiences.map((item) => getStartYear(item.period)).filter(Boolean);
     const firstYear = startYears.length ? Math.min(...startYears) : new Date().getFullYear();
 
